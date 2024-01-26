@@ -1,4 +1,45 @@
-h1{ 
-  color: blue;
-  font-size: 3em;
+main { 
+  /* position */
+  position: absolute;
+  top: 70px;
+  left: 10px;
+}
+
+/* index.html의 header 부분 */
+.dorm-title {
+  color: Red;
+
+  /* position */
+  position: absolute;
+  top: 20px;
+  left: 30px;
+
+}
+
+/* 커트라인
+.dorm-cutline {
+  color: #12ab5f;
+  position */
+  /* position: absolute;
+  top: 200px;
+  left: 20px;
+} */
+
+footer{
+  position: absolute;
+  top:500px;
+  left: 100px;
+
+}
+
+.sidebar-toggle {
+  position: absolute;
+  top:130px;
+  left: 0px;
+
+}
+
+.cutline {
+  position: absolute;
+  left: 1000px;
 }
