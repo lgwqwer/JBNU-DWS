@@ -3,7 +3,7 @@ const fs = require('fs').promises;
 
 http.createServer(async (req, res) => {
   try {
-    const f = await fs.readFile('main/index.html');
+    const f = await fs.readFile('./index.html');
     res.writeHead(200, {'Content-Type': 'text.html; charset=utf-8'});   // 200이면 서버 요청 성공
 
     res.end(f);
