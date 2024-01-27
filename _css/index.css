@@ -1,14 +1,15 @@
-main { 
+.index-title { 
   /* position */
-  position: absolute;
-  top: 70px;
-  left: 10px;
+  background-color: #5F1C42;
+  padding: 20px;
+  color: #E6E6E6;
+  text-align: center;
+  margin: 0px;
 }
 
 /* index.html의 header 부분 */
 .dorm-title {
   color: Red;
-
   /* position */
   position: absolute;
   top: 20px;
@@ -16,30 +17,15 @@ main {
 
 }
 
-/* 커트라인
 .dorm-cutline {
-  color: #12ab5f;
-  position */
-  /* position: absolute;
-  top: 200px;
-  left: 20px;
-} */
-
-footer{
   position: absolute;
-  top:500px;
-  left: 100px;
-
+  top: 80px;
+  left: 20px;
+  text-align: center;
 }
 
 .sidebar-toggle {
   position: absolute;
   top:130px;
   left: 0px;
-
-}
-
-.cutline {
-  position: absolute;
-  left: 1000px;
 }
