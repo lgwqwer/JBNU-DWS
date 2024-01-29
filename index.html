@@ -5,39 +5,130 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JBNU 기숙사이트</title>
-  <link rel="stylesheet" href="./_css/index.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
+
   <header>
-    <h1 style="color: red">전북대학교 기숙사이트</h1>
+    <div>
+      <pre><h1 class="index-title">전 북 대 학 교   기 숙 사 이 트</h1></pre>
+    </div>
+
+    <nav class="index-nav">
+      <a href="./html/dorm-info.html" target="blank">
+        <h1>기숙사 정보</h1>
+      </a>
+      <a href="#">
+        <h1>기숙사 아무거나</h1>
+      </a>
+      <a href="#">
+        <h1>기숙사 개쩔어</h1>
+      </a>
+      <a href="#">
+        <h1>기숙사 밥 노맛</h1>
+      </a>
+      <a href="#">
+        <h1>기숙사 룸메 최고</h1>
+      </a>
+    </nav>
   </header>
 
   <hr>
 
-  <nav>
-    <ul class="sidebar-toggle">
-      <li><a href="./_html/dorm-fr-rec.html" target="_blank">신입생 환산점수 확인하기</a></li>
-      <li><a href="./_html/dorm-es-rec.html" target="_blank">재학생 환산점수 확인하기</a></li>
-      <li><a href="./_html/login.html" target="_blank">로그인 화면</a></li>
-      <li><a href="./_html/dorm-info.html" target="blank">기숙사 정보</a></li>
-      <br>
-      <li><a href="./_html/cutline/23-2-B-type-cutline.html" target="blank">2023학년도 2학기 한빛/새빛/대동/평화 커트라인 보기</a></li>
-      <li><a href="./_html/cutline/23-1-B-type-cutline.html" target="blank">2023학년도 1학기 한빛/새빛/대동/평화 커트라인 보기</a></li>
-      <br>
-      <li><a href="./_html/cutline/23-2-D-type-cutline.html" target="blank">2023학년도 2학기 창의관 커트라인 보기</a></li>
-      <li><a href="./_html/cutline/23-1-D-type-cutline.html" target="blank">2023학년도 1학기 창의관 커트라인 보기</a></li>
-      <br>
-      <li><a href="./_html/cutline/23-2-A-type-cutline.html" target="blank">2023학년도 2학기 참빛관 커트라인 보기</a></li>
-      <li><a href="./_html/cutline/23-1-A-type-cutline.html" target="blank">2023학년도 1학기 참빛관 커트라인 보기</a></li>
-      
-
-    </ul>
-  </nav>
 
   <main>
-  <span class="dorm-cutline"><h2>2023학년도 기숙사 별 커트라인</h2></span>
+
+    <!-- 기숙사 환산점수 변환 -->
+    <div class="wrapper">
+
+      <div>
+        <form action="" method="get">
+          <!-- 타이틀 -->
+          <h1 class="input-title">기숙사 환산점수 변환</h1>
+          <div class="info-input">
+            <!-- 단과대학 선택  -->
+            <label for="collages">단과대학 : </label>
+            <select name="collage" id="collages">
+              <option value="engineering">공과대학</option>
+              <option value="agriculture">농업생명대학</option>
+              <option value="education">사범대학</option>
+              <option value="commerce">상과대학</option>
+              <option value="humanEcology">생활과학대학</option>
+              <option value="arts">예술대학</option>
+              <option value="humanities">인문대학</option>
+              <option value="naturalSciences">자연과학대학</option>
+            </select>
+            <!-- 학점 입력 -->
+            <input type="number" id="gradeInput" step="0.01" placeholder="학점 입력" max="4.5" min="0" width="100">
+            </label>
+            <i class='bx bxs-graduation'></i>
+          </div>
+
+          <button type="submit" class="credit-input-btn">변환!</button>
+
+          <!-- 환산점수 출력 -->
+          <div>
+            <label for="convertedScore">환산 점수 : <output type="text" id="convertedScore"></output></label>
+          </div>
+
+          <!-- 신입생 입니까? -->
+          <p class="is-freshman">신입생이세요? <a href="#">신입생 기숙사 환산점수 확인하기</a></p>
+        </form>
+
+      </div>
+
   </main>
+
+
+  <nav>
+
+    <!-- 사이드바  -->
+    <div class="main-sidebar">
+      <h1>2023년 2학기</h1>
+      <ul>
+        <li><a href="./html/cutline/23-2-B-type-cutline.html" target="blank">한빛/새빛/대동/평화 커트라인 보기</a></li>
+        <br>
+        <li><a href="./html/cutline/23-2-D-type-cutline.html" target="blank">창의관 커트라인 보기</a></li>
+        <br>
+        <li><a href="./html/cutline/23-2-A-type-cutline.html" target="blank">참빛관 커트라인 보기</a></li>
+      </ul>
+
+      <hr>
+
+      <h1>2023년 1학기</h1>
+      <ul>
+        <li><a href="./html/cutline/23-1-B-type-cutline.html" target="blank">한빛/새빛/대동/평화 커트라인 보기</a></li>
+        <br>
+        <li><a href="./html/cutline/23-1-D-type-cutline.html" target="blank">창의관 커트라인 보기</a></li>
+        <br>
+        <li><a href="./html/cutline/23-1-A-type-cutline.html" target="blank">참빛관 커트라인 보기</a></li>
+      </ul>
+
+      <hr>
+
+      <h1>2022년 2학기</h1>
+      <ul>
+        <li><a href="#">한빛/새빛/대동/평화 커트라인 보기</a></li>
+        <br>
+        <li><a href="#">창의관 커트라인 보기</a></li>
+        <br>
+        <li><a href="#">참빛관 커트라인 보기</a></li>
+      </ul>
+
+      <hr>
+
+      <h1>2022년 1학기</h1>
+      <ul>
+        <li><a href="#">한빛/새빛/대동/평화 커트라인 보기</a></li>
+        <br>
+        <li><a href="#">창의관 커트라인 보기</a></li>
+        <br>
+        <li><a href="#">참빛관 커트라인 보기</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <footer>
   </footer>
