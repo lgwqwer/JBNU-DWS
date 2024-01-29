@@ -31,14 +31,19 @@
 
 .index-nav {
   font-family: "ChosunGs";
-  text-align: center;
   display: flex; /* Flexbox를 사용하여 수평 정렬 */
   justify-content: center; /* 가운데 정렬 */
 }
 
+.index-nav h1 {
+  margin: 0;
+  padding: 0;
+}
+
 .index-nav a {
-  margin-right: 20px; /* 각 링크 사이의 간격 조절 */
+  margin-right: 20px; 
   margin-left: 20px;
+
   text-decoration: none;
   color: rgb(157, 95, 7);
 }
