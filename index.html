@@ -17,11 +17,21 @@
     </div>
 
     <nav class="index-nav">
-      <a href="./html/dorm-info.html" target="blank"><h1>기숙사 정보</h1></a>
-      <a href="#"><h1>기숙사 아무거나</h1></a>
-      <a href="#"><h1>기숙사 개쩔어</h1></a>
-      <a href="#"><h1>기숙사 밥 노맛</h1></a>
-      <a href="#"><h1>기숙사 룸메 최고</h1></a>
+      <a href="./html/dorm-info.html" target="blank">
+        <h1>기숙사 정보</h1>
+      </a>
+      <a href="#">
+        <h1>기숙사 아무거나</h1>
+      </a>
+      <a href="#">
+        <h1>기숙사 개쩔어</h1>
+      </a>
+      <a href="#">
+        <h1>기숙사 밥 노맛</h1>
+      </a>
+      <a href="#">
+        <h1>기숙사 룸메 최고</h1>
+      </a>
     </nav>
   </header>
 
@@ -32,13 +42,13 @@
 
     <!-- 기숙사 환산점수 변환 -->
     <div class="wrapper">
-      <div class="user-info-input">
-        <form action="" method="get">
-          <!-- 사용자 정보 입력 타이틀 -->
-          <h1 class="input-title">기숙사 환산점수 변환</h1>
 
-          <!-- 단과대학 선택  -->
-          <div>
+      <div>
+        <form action="" method="get">
+          <!-- 타이틀 -->
+          <h1 class="input-title">기숙사 환산점수 변환</h1>
+          <div class="info-input">
+            <!-- 단과대학 선택  -->
             <label for="collages">단과대학 : </label>
             <select name="collage" id="collages">
               <option value="engineering">공과대학</option>
@@ -50,12 +60,8 @@
               <option value="humanities">인문대학</option>
               <option value="naturalSciences">자연과학대학</option>
             </select>
-            <i class='bx bxs-graduation'></i>
-          </div>
-
-          <div>
             <!-- 학점 입력 -->
-            <input type="number" id="gradeInput" step="0.01" placeholder="학점을 입력하세요" max="4.5" min="0" width="100">
+            <input type="number" id="gradeInput" step="0.01" placeholder="학점 입력" max="4.5" min="0" width="100">
             </label>
             <i class='bx bxs-graduation'></i>
           </div>
@@ -68,8 +74,9 @@
           </div>
 
           <!-- 신입생 입니까? -->
-          <p class ="is-freshman">신입생이세요? <a href="#">신입생 기숙사 환산점수 확인하기</a></p>
+          <p class="is-freshman">신입생이세요? <a href="#">신입생 기숙사 환산점수 확인하기</a></p>
         </form>
+
       </div>
 
   </main>
