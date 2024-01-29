@@ -1,31 +1,122 @@
+/* 오픈소스 */
+
+@font-face {
+  /* 읏맨 궁서체 */
+  font-family: 'OKGUNG';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/OKGUNG.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  /* 조선 궁서체 */
+  font-family: 'ChosunGs';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*  메인 페이지 헤더 */
+
 .index-title { 
   /* position */
-  background-color: #5F1C42;
-  padding: 20px;
-  color: #E6E6E6;
+  /* background-color: #5F1C42; */
+  color: #000000;
+  
   text-align: center;
+  font-family: 'OKGUNG';
+
+  /* padding: 20px;
+  margin: 0px; */
+}
+
+.index-nav {
+  font-family: "ChosunGs";
+  text-align: right;
+  display: flex;
+
+}
+
+.index-nav h1 {
+  margin: 0; /* h1의 기본 margin 제거 */
+}
+
+.index-nav a {
+  margin-right: 20px; /* 각 링크 사이의 간격 조절 */
+  text-decoration: none;
+  text-align: right;
+}
+
+.index-nav a:hover {
+  text-decoration: underline;
+}
+
+/* 메인페이지 - 기숙사 환산점수 변환 */
+
+div.wrapper{
+  /* height: 100vh; */
+  margin: 30px auto;
+  padding-top: 0px;
+  padding-bottom: 200px;
+
+  width: 420px;
+  background-color: rgb(238, 238, 238);
+  color: #000000;
+  text-align: center;
+  border: 3px solid #6f4f28;
+}
+
+.wrapper h1 {
+  font-size: 30px;
+}
+
+.user-info-input{
+  justify-content: center;
+}
+
+.input-title{
+  /* text-align: center; */
+  font-family: "ChosunGs";
+}
+
+.is-freshman a {
+  text-decoration: none;
+}
+
+.is-freshman a:hover {
+  text-decoration: underline;
+}
+
+
+/* 사이드바 */
+
+.main-sidebar {
+  list-style-type: none;
+  text-align: left;
+
+  padding: 10px;
   margin: 0px;
+  border: 3px solid #6f4f28;
+
+  width: 300px;
+  height: 800px;
+
+  overflow: auto;
+  background: rgb(238, 238, 238);
+
+  position: absolute;
+  top: 160px;
 }
 
-/* index.html�� header �κ� */
-.dorm-title {
-  color: Red;
-  /* position */
-  position: absolute;
-  top: 20px;
-  left: 30px;
-
-}
-
-.dorm-cutline {
-  position: absolute;
-  top: 80px;
-  left: 20px;
+.main-sidebar h1{
+  font-family: "ChosunGs";
   text-align: center;
 }
 
-.sidebar-toggle {
-  position: absolute;
-  top:130px;
-  left: 0px;
+.main-sidebar a {
+  text-decoration: none;
+  color: brown;
+}
+
+.main-sidebar a:hover {
+  text-decoration: underline;
 }
