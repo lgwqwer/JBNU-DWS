@@ -15,16 +15,48 @@
   font-style: normal;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #D8C2AC ; /* C0A080 */
+} 
+
+main {
+  margin-top: 10px;
+  padding: 0;
+  width: 80%;
+  height: 500px ;
+  float: right;
+
+}
+
+footer {
+  margin: 0;
+  padding: 0;
+
+}
+
 /*  메인 페이지 헤더 */
 
+header {
+  margin: 0;
+  padding: 0;
+  background-color: #F1E5DA;
+}
+
 .index-title { 
-  /* position */
-  /* background-color: #5F1C42; */
+  margin: 0;
+  padding: 20px 30px;
   color: #000000;
   
   text-align: center;
   font-family: 'OKGUNG';
-
+  font-size: 32px;
   /* padding: 20px;
   margin: 0px; */
 }
@@ -36,8 +68,9 @@
 }
 
 .index-nav h1 {
-  margin: 0;
+  margin-bottom: 10px;
   padding: 0;
+  font-size: 1.5em;
 }
 
 .index-nav a {
@@ -52,32 +85,29 @@
   text-decoration: underline;
 }
 
-/* 메인페이지 - 기숙사 환산점수 변환 */
+/* 메인페이지 바디*/
 
-div.wrapper{
-  /* height: 100vh; */
-  margin: 30px auto;
-  padding-top: 0px;
-  padding-bottom: 10px;
+.conversion-form {
+  margin: 0 auto;
+  padding: 20px;
 
-  width: 420px;
+  width: 50%;
   background-color: rgb(238, 238, 238);
-  color: #000000;
   text-align: center;
   border: 3px solid #6f4f28;
-}
 
-.wrapper h1 {
-  font-size: 30px;
-}
-
-.user-info-input{
-  justify-content: center;
+  position: relative;
+  right: 10%;
+  
 }
 
 .input-title{
-  /* text-align: center; */
   font-family: "ChosunGs";
+  font-size: 2em;
+}
+
+.is-freshman {
+  margin-top: 30px;
 }
 
 .is-freshman a {
@@ -93,43 +123,57 @@ div.wrapper{
   padding: 15px;
 }
 
-.credit-input-btn {
-  width: 300px;
-  height: 30px;
-  margin-bottom: 20px;
+.conversion-btn {
+  width: 30%;
+  height: 5%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  padding: 10px;
 
+  background-color: rgb(238, 238, 238);
+  border-radius: 10px;
+  font-family: "ChosunGs";
+  font-size: 20px;
+}
+
+.conversion-btn:hover {
+  background-color: #ce6d39;
 }
 
 /* 사이드바 */
 
-.main-sidebar {
-  list-style-type: none;
-  text-align: left;
-
+aside {
+  margin-top: 10px;
   padding: 10px;
-  margin: 0px;
   border: 3px solid #6f4f28;
-
-  width: 300px;
-  height: 800px;
-
-  overflow: auto;
-  background: rgb(238, 238, 238);
-
-  position: absolute;
-  top: 160px;
-}
-
-.main-sidebar h1{
+  
+  width: 20%;
+  height: 100%;
+  
+  text-align: left;
   font-family: "ChosunGs";
-  text-align: center;
+
+  background: rgb(238, 238, 238);  
 }
 
-.main-sidebar a {
+aside h1{
+  padding: 10px;
+  text-align: center;
+  font-size: 150%;
+}
+
+aside ul{
+  margin: 10px;
+  list-style-type: none;
+}
+
+aside a {
+  padding: 10px;
   text-decoration: none;
   color: brown;
+  font-size: 110%;
 }
 
-.main-sidebar a:hover {
+aside a:hover {
   text-decoration: underline;
 }
