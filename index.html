@@ -46,12 +46,14 @@
 
       <div>
         <form action="" method="get">
+
           <!-- 타이틀 -->
           <h1 class="input-title">기숙사 환산점수 변환</h1>
           <div class="info-input">
+
             <!-- 단과대학 선택  -->
             <label for="collages">단과대학 : </label>
-            <select name="collage" id="collages">
+            <select name="collage" id="collages" style="width: 20%;">
               <option value="engineering">공과대학</option>
               <option value="agriculture">농업생명대학</option>
               <option value="education">사범대학</option>
@@ -61,12 +63,17 @@
               <option value="humanities">인문대학</option>
               <option value="naturalSciences">자연과학대학</option>
             </select>
-            <!-- 학점 입력 -->
-            <input type="number" name="grade" step="0.01" placeholder="학점 입력" max="4.5" min="0">
-            </label>
-            <i class='bx bxs-graduation'></i>
-          </div>
 
+            <!-- 학점 입력 -->
+            <input type="number" name="grade" step="0.01" placeholder="학점(성적)" max="4.5" min="0" style="width: 20%;">
+            </label>
+            <!-- <i class='bx bxs-graduation'></i> -->
+
+            <!-- 거리점수 입력 -->
+            <input type="number" name="dst-score" step="0.01" placeholder="거리점수" max="10.00" min="5" style="width: 20%;">
+            
+          </div>
+          
           <button type="submit" class="credit-input-btn">변환!</button>
 
           <!-- 환산점수 출력 -->
