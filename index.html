@@ -16,29 +16,90 @@
 
 <body>
 
-  <nav class="navbar">
-    
-    <div class="navbar_logo">
-      <i class="fa-solid fa-school"></i>
-      <a href="index.html">전북대 기숙사이트</a>
+  <header>
+    <nav class="navbar">
+
+      <div class="navbar_logo">
+        <i class="fa-solid fa-school"></i>
+        <a href="index.html">전북대 기숙사이트</a>
+      </div>
+
+      <ul class="navbar_menu">
+        <li><a href="./html/dorm-info.html" target="_blank">기숙사 정보</a></li>
+        <li><a href="#">기숙사 약도</a></li>
+        <li><a href="#">기숙사 모의 지원</a></li>
+        <li><a href="#">기숙사 평점</a></li>
+        <li><a href="#">룸메 구인</a></li>
+      </ul>
+
+      <ul class="navbar_icons">
+        <!-- <li><i class="fa-regular fa-moon"></i></li> -->
+        <li><i class="fa-solid fa-sun"></i></li>
+        <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
+
+      </ul>
+
+      <a href="#" class="navbar_toggleBtn">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+    </nav>
+  </header>
+
+
+  <div class="conversion_block">
+
+    <div>
+      <h1><i class="fa-solid fa-calculator"></i>&nbsp;&nbsp;기숙사 추천기</h1>
     </div>
 
-    <ul class="navbar_menu">
-      <li><a href="./html/dorm-info.html" target="_blank">기숙사 정보</a></li>
-      <li><a href="#">기숙사 약도</a></li>
-      <li><a href="#">기숙사 모의 지원</a></li>
-      <li><a href="#">기숙사 평점</a></li>
-      <li><a href="#">룸메 구인</a></li>
-    </ul>
+    <div>
+      <form action="" name="conversion-form" method="post">
+        <select>
+          
 
-    <ul class="navbar_icons">
-      <li><a href="https://www.jbnu.ac.kr/kor/" target="_blank"><i class="fa-solid fa-house"></i></a></li>
-    </ul>
+        </select>
+        <input type="number" name="grade" placeholder="학점을 입력하세요." step="0.01">
+        <input type="number" name="dist-score" placeholder="거리 점수를 입력하세요." step="0.05">
+      </form>
+    </div>
 
-    <a href="#" class="navbar_toggleBtn">
-      <i class="fa-solid fa-bars"></i>
-    </a>
-  </nav>
+    <div>
+      <button>추천 받기!</button>
+    </div>
+    
+  </div>
+  
+  <div class="dorm_shortcuts">
+    <div>
+      <li>참빛관 홈페이지 바로가기</li>
+      <a href="https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C3000" target="_blank"><i
+          class="fa-solid fa-circle-arrow-right"></i></a>
+    </div>
+
+    <div>
+      <li>한빛관 홈페이지 바로가기</li>
+      <a href="https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C6000" target="_blank"><i
+        class="fa-solid fa-circle-arrow-right"></i></a>
+      </div>
+      
+      <div>
+        <li>새빛관 홈페이지 바로가기</li>
+      <a href="https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C5000" target="_blank"><i
+          class="fa-solid fa-circle-arrow-right"></i></a>
+    </div>
+
+    <div>
+      <li>창의관 홈페이지 바로가기</li>
+      <a href="https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C9000" target="_blank"><i
+          class="fa-solid fa-circle-arrow-right"></i></a>
+    </div>
+
+    <div class="add_dorm_info">
+      <li>혜민관 홈페이지 바로가기</li>
+      <a href="https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C4000" target="_blank"><i
+          class="fa-solid fa-circle-arrow-right"></i></a>
+    </div>
+  </div>
 
 
 </body>
