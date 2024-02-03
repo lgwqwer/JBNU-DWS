@@ -110,9 +110,14 @@ a {
 .conversion_block div {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   width: 100%;
+}
+
+.conversion_title {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 24px;
 }
 
 .conversion_block div form {
@@ -121,14 +126,22 @@ a {
   width: 70%;
 }
 
+.conversion_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.conversion_info button {
+  position:relative;
+  left: 12px;
+  width: 20%;
+}
+
 .conversion_block i {
   color: tomato;
 }
-
-.conversion_block h1 {
-  font-size: 150%;
-}
-
 
 .dorm_shortcuts {
   display: flex;
