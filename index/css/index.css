@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'NPSfontBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'NPSfontBold';
+  /* background-color: #263343; */
+}
+
+header {
+  height: 15%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
