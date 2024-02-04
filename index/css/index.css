@@ -5,6 +5,11 @@
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
 html {
   height: 100%;
 }
