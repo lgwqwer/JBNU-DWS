@@ -11,16 +11,8 @@
   font-family: "NPSfontBold";
 }
 
-html {
+html,body {
   height: 100%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'NPSfontBold';
-  /* background-color: #263343; */
 }
 
 header {

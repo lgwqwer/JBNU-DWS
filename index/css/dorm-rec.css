@@ -33,12 +33,15 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
+  gap: 24px;
 
   /* width: 100%;
   height: 100%; */
 
   padding: 24px;
+
+  max-width: 33.33%;
+
 }
 
 .dorm__rec__input__title {
@@ -49,7 +52,8 @@
 
 .dorm__rec__input form {
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   /* background-color: blue; */
   
@@ -59,15 +63,40 @@
 
 .dorm__rec__input form div {
   display: flex;
-  justify-content: space-between;
+  justify-items: center;
   align-items: center;
-  max-width: 33.33%;
+
+  width: 100%;
+  height: 33.33%;
+  /* max-width: 33.33%; */
+  /* margin: 12px 24px; */
+}
+
+.input__select{
+  background-color: blue;
+}
+
+.input__select select {
+  width: 30%;
 }
 
 .input__box {
-  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* width: 100%; */
+  background-color: red;
 }
 
+.input__box input {
+  width: 20%;
+}
+
+.dorm__rec__input__btn {
+  background-color: orange;
+}
+
+/*  */
 
 .dorm__rec__btn {
   display: flex;
