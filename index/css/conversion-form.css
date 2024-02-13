@@ -1,0 +1,28 @@
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+@media screen and (max-width: 880px) {
+  .dorm__rec {
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .dorm__rec div {
+    width: 100%;
+    height: 30%;
+  }
+
+  .dorm__rec div form input {
+    width: 50%;
+  }
+
+  #dorm__rec-input {
+    width: 50%;
+    height: 50%;
+  }
+}

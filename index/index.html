@@ -15,13 +15,23 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/4ec59cdc0a.js" crossorigin="anonymous"></script>
-
+  
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/index.css">
 
+  <ling src="./css/conversion-form.css"></ling>
+  <script src="./js/toggle.js"></script>
+  <script src="./js/main.js"></script>
 </head>
 
 <body>
+  <style>
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
 
   <header class="container-fluid p-0">
     <nav class="navbar top justify-content-between align-items-center p-3 w-100">
@@ -50,12 +60,11 @@
   </header>
 
   <main>
+    <div class="container mb-5 px-4">
+      <h1 class="mb-5">기숙사 환산점수 계산</h1>
+      <form active="" method="get" class="mb-5">
 
-    <div class="container mb-5 p-5">
-      <h1>기숙사 환산점수 계산</h1>
-      <form active="" method="get">
-
-        <table class="table table-hover">
+        <table class="table table-hover table-bordered mb-5">
           <colgroup>
             <col width=15%>
             <col width=7%>
@@ -95,26 +104,18 @@
                   <option value="naturalSciences">자연과학대학</option>
                 </select>
               </th>
-              <td><div class="form-floating h-25 w-100">
-                <input type="number" class="form-control" id="floatingInput" placeholder="학점">
-                <label for="floatingInput"></label>
-              </div></td>
-              <td>0</td>
-              <td>0</td>
+              <td>
+                <input type="number" name="grade" class="form-control" id="gradeInput" step="0.01">
+              </td>
+              <td>
+                <input type="number" name="bonusPoint" class="form-control" id="bonusPointInput" step="1">
+              </td>
+              <td>
+                <input type="number" name="minusPoint" class="form-control" id="minusPointInput" step="1">
+              </td>
               <td>
                 <select name="province" id="provinces" class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100"
                   aria-label="Default select example">
-                  <option selected>시/도</option>
-                  <option value="Gangwon-do">강원특별자치도</option>
-                  <option value="Gyeonggi-do">경기도</option>
-                  <option value="Gyeonsangnam-do">경상남도</option>
-                  <option value="Gyeonsangbuk-do">경상북도</option>
-                  <option value="Gwangju">광주광역시</option>
-                  <option value="Daegu">대구광역시</option>
-                  <option value="Daegeon">대전광역시</option>
-                  <option value="Sejong">세종특별자치시</option>
-                  <option value="Jeollabuk-do">전북특별자치도</option>
-                  <option value="hh">아오 귀찮아</option>
                 </select>
               </td>
               <td><select class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100" aria-label="Default select example">
@@ -123,138 +124,46 @@
                   <option value="2">Two</option>
                   <option value="3">Three</option>
                 </select></td>
-              <td>5.00</td>
-              <td>85.00</td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <select class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100" name="collage" id="collages"
-                  aria-label="Default select example">
-                  <option selected>단과대학</option>
-                  <option value="engineering">공과대학</option>
-                  <option value="agriculture">농업생명대학</option>
-                  <option value="education">사범대학</option>
-                  <option value="commerce">상과대학</option>
-                  <option value="humanEcology">생활과학대학</option>
-                  <option value="arts">예술대학</option>
-                  <option value="humanities">인문대학</option>
-                  <option value="naturalSciences">자연과학대학</option>
-                </select>
-              </th>
-              <td>4.24</td>
-              <td>0</td>
-              <td>0</td>
               <td>
-                <select name="province" id="provinces" class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100"
-                  aria-label="Default select example">
-                  <option selected>시/도</option>
-                  <option value="Gangwon-do">강원특별자치도</option>
-                  <option value="Gyeonggi-do">경기도</option>
-                  <option value="Gyeonsangnam-do">경상남도</option>
-                  <option value="Gyeonsangbuk-do">경상북도</option>
-                  <option value="Gwangju">광주광역시</option>
-                  <option value="Daegu">대구광역시</option>
-                  <option value="Daegeon">대전광역시</option>
-                  <option value="Sejong">세종특별자치시</option>
-                  <option value="Jeollabuk-do">전북특별자치도</option>
-                  <option value="hh">아오 귀찮아</option>
-                </select>
+                <input class="form-control" type="number" id="distanceScore" readonly>
               </td>
               <td>
-                <select class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100" aria-label="Default select example">
-                  <option selected>시/군/구</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
+                <input class="form-control" type="number" id="conversionScore" readonly>
               </td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <select class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100" name="collage" id="collages"
-                  aria-label="Default select example">
-                  <option selected>단과대학</option>
-                  <option value="engineering">공과대학</option>
-                  <option value="agriculture">농업생명대학</option>
-                  <option value="education">사범대학</option>
-                  <option value="commerce">상과대학</option>
-                  <option value="humanEcology">생활과학대학</option>
-                  <option value="arts">예술대학</option>
-                  <option value="humanities">인문대학</option>
-                  <option value="naturalSciences">자연과학대학</option>
-                </select>
-              </th>
-              <td>3.8</td>
-              <td>0</td>
-              <td>0</td>
-              <td>
-                <select name="province" id="provinces" class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100"
-                  aria-label="Default select example">
-                  <option selected>시/도</option>
-                  <option value="Gangwon-do">강원특별자치도</option>
-                  <option value="Gyeonggi-do">경기도</option>
-                  <option value="Gyeonsangnam-do">경상남도</option>
-                  <option value="Gyeonsangbuk-do">경상북도</option>
-                  <option value="Gwangju">광주광역시</option>
-                  <option value="Daegu">대구광역시</option>
-                  <option value="Daegeon">대전광역시</option>
-                  <option value="Sejong">세종특별자치시</option>
-                  <option value="Jeollabuk-do">전북특별자치도</option>
-                  <option value="hh">아오 귀찮아</option>
-                </select>
-              </td>
-              <td>
-                <select class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100" aria-label="Default select example">
-                  <option selected>시/군/구</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </td>
-              <td>0</td>
-              <td>0</td>
             </tr>
           </tbody>
         </table>
-    </div>
-    <div class="container row">
-      <div class="form-check col-xxl-3 col-xl-4 col-lg-6">
-        <input class="form-check-input" type="checkbox" name="gender" value="m" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          남성
-        </label>
-      </div>
-      <div class="form-check col-xxl-3 col-xl-4 col-lg-6">
-        <input class="form-check-input" type="checkbox" name="gender" value="w" id="flexCheckChecked">
-        <label class="form-check-label" for="flexCheckChecked">
-          여성
-        </label>
-      </div>
-    </div>
-    
-    
 
-    <button class="btn btn-dark rounded-pill px-3" type="submit">계산하기!</button>
-    </form>
-
-
+        <div class="container row justify-content-between">
+          <div class="form-check col-xxl-3 col-xl-4 col-lg-6">
+            <input class="form-check-input" type="radio" name="gender" value="m" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              남성
+            </label>
+          </div>
+          <div class="form-check col-xxl-3 col-xl-4 col-lg-6">
+            <input class="form-check-input" type="radio" name="gender" value="w" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              여성
+            </label>
+          </div>
+          <div class="col-xxl-3 col-xl-4 col-lg-6">
+            <button class="btn btn-dark rounded-pill px-3" type="submit">계산하기!</button>
+          </div>
+        </div>
+      </form>
     </div>
 
     <hr>
 
-    </div>
-
-
     <div class="container">
-      <div class="row justify-content-center g-4 px-2 gap-4">
+      <div class="row justify-content-center g-4 px-2 gap-4 mb-5 mt-2">
 
         <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
           <img src="../images/참빛관.png" class="card-img-top" alt="참빛관 사진">
           <div class="card-body">
             <h5 class="card-title">참빛관</h5>
-            <p class="card-text">시설 좋은 편, 밥 개노맛</p>
+            <p class="card-text"></p>
             <button class="btn btn-dark rounded-pill px-3" type="button"
               onclick="window.open('https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C3000', '_blank')">홈페이지 ㄱ
               ㄱ</button>
@@ -265,7 +174,7 @@
           <img src="../images/대동관.png" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">대동관</h5>
-            <p class="card-text">시설 구림, 밥 개꿀맛</p>
+            <p class="card-text"></p>
             <button class="btn btn-dark rounded-pill px-3" type="button"
               onclick="window.open('https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C2000', '_blank')">홈페이지 ㄱ
               ㄱ</button>
@@ -276,7 +185,7 @@
           <img src="../images/평화관.png" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">평화관</h5>
-            <p class="card-text">시설 구림</p>
+            <p class="card-text"></p>
             <button class="btn btn-dark rounded-pill px-3" type="button"
               onclick="window.open('https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C2000', '_blank')">홈페이지 ㄱ
               ㄱ</button>
@@ -287,7 +196,7 @@
           <img src="../images/새빛관.png" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">새빛관</h5>
-            <p class="card-text">시설 좋은 편, 밥 개꿀맛</p>
+            <p class="card-text"></p>
             <button class="btn btn-dark rounded-pill px-3" type="button"
               onclick="window.open('https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C5000', '_blank')">홈페이지 ㄱ
               ㄱ</button>
@@ -298,7 +207,7 @@
           <img src="../images/한빛관.png" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">한빛관</h5>
-            <p class="card-text">시설 좋음, 밥 개꿀맛</p>
+            <p class="card-text"></p>
             <button class="btn btn-dark rounded-pill px-3" type="button"
               onclick="window.open('https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C6000', '_blank')">홈페이지 ㄱ
               ㄱ</button>
@@ -309,7 +218,7 @@
           <img src="../images/창의관.png" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">창의관</h5>
-            <p class="card-text">시설 좋음, 밥 안줌</p>
+            <p class="card-text"></p>
             <button class="btn btn-dark rounded-pill px-3" type="button"
               onclick="window.open('https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C9000', '_blank')">홈페이지 ㄱ
               ㄱ</button>
@@ -320,7 +229,7 @@
           <img src="../images/혜민관.png" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">혜민관</h5>
-            <p class="card-text">ㅎㅎㅎ</p>
+            <p class="card-text"></p>
             <button class="btn btn-dark rounded-pill px-3" type="button"
               onclick="window.open('https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C4000', '_blank')">홈페이지 ㄱ
               ㄱ</button>
@@ -331,7 +240,7 @@
           <img src="../images/특성화캠퍼스.png" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">웅비관</h5>
-            <p class="card-text">익산 캠퍼스!</p>
+            <p class="card-text"></p>
             <button class="btn btn-dark rounded-pill px-3" type="button"
               onclick="window.open('https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C7000', '_blank')">홈페이지 ㄱ
               ㄱ</button>
@@ -342,12 +251,40 @@
           <img src="../images/특성화캠퍼스.png" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">청운관</h5>
-            <p class="card-text">익산 캠퍼스!</p>
+            <p class="card-text"></p>
             <button class="btn btn-dark rounded-pill px-3" type="button"
               onclick="window.open('https://likehome.jbnu.ac.kr/home/main/inner.php?sMenu=C8000', '_blank')">홈페이지 ㄱ
               ㄱ</button>
           </div>
         </div>
+
+        <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
+          <img src="../images/미리보기.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">추가 예정</h5>
+            <p class="card-text"></p>
+            <button class="btn btn-dark rounded-pill px-3" type="button">추가 예정</button>
+          </div>
+        </div>
+
+        <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
+          <img src="../images/미리보기.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">추가 예정</h5>
+            <p class="card-text"></p>
+            <button class="btn btn-dark rounded-pill px-3" type="button">추가 예정</button>
+          </div>
+        </div>
+
+        <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
+          <img src="../images/미리보기.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">추가 예정</h5>
+            <p class="card-text"></p>
+            <button class="btn btn-dark rounded-pill px-3" type="button">추가 예정</button>
+          </div>
+        </div>
+
       </div>
     </div>
 
