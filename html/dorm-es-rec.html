@@ -15,7 +15,7 @@
   <main>
     <fieldset style="width: 500px; height: 100px">
       <legend>환산점수 계산</legend>
-      <form action="" method="get">
+      <form id="scoreForm">
         <label for="collages">단과대학 : </label>
         <select name="collage" id="collages">
           <option value="engineering">공과대학</option>
@@ -28,14 +28,35 @@
           <option value="naturalSciences">자연과학대학</option>
         </select>
         <label for="gradeInput">학점 : <input type="number" id="gradeInput" step="0.01"> </label>
-        <input type="submit" value="계산!">
+        <input type="submit" value="계산!" onclick="calculateScore(event)">
+      </form>
+    </fieldset>
+
+    <br>
+
+    <label for="convertedScore">환산 점수 : <output type="text" id="convertedScore"></output></label>
   </main>
-  <br>
 
-  <label for="convertedScore">환산 점수 : <output type="text" id="convertedScore"></output></label>
-  </fieldset>
-  </form>
+  <script>
+    function calculateScore(event) {
+      event.preventDefault(); // 폼의 기본 동작을 막음
 
+      var form = document.getElementById('scoreForm');
+      var formData = new FormData(form);
+
+      fetch('/calculate', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('convertedScore').textContent = data;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+  </script>
 </body>
 
 </html>
