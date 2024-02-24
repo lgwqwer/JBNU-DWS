@@ -1,11 +1,8 @@
 package GBSB.JBNU_DWS.controller;
 
 import GBSB.JBNU_DWS.dto.ConversionForm;
-import org.apache.catalina.util.ToStringUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -19,6 +16,6 @@ public class ConversionController {
         model.addAttribute("distanceScore", form.getDistanceScore());
         model.addAttribute("conversionScore", form.getConversionScore());
         System.out.println(form.toString());
-        return "home";
+        return "index";
     }
 }
