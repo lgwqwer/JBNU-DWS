@@ -1,0 +1,76 @@
+.dorm_shortcuts {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+
+    padding-left: 0;
+    padding: 0;
+
+    width: 95%;
+    height: 30%;
+    background-color: white;
+    border-radius: 12px;
+    gap: 12px;
+}
+
+.dorm_shortcuts div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+    padding: 12px;
+
+    width: 30%;
+    background-color: #263343;
+    border-radius: 12px;
+}
+
+.dorm_shortcuts li {
+    list-style: none;
+    color: white;
+    font-size: 24px;
+    left: 12px;
+}
+
+.dorm_shortcuts i {
+    font-size: 40px;
+    color: tomato;
+    right: 12px;
+}
+
+.add_dorm_info {
+    display: none;
+}
+
+@media screen and ( max-width: 880px){
+
+    .dorm_shortcuts {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+        height: 50%;
+
+    }
+
+    .dorm_shortcuts div {
+        display: flex;
+        box-sizing: border-box;
+        padding: 12px;
+        width: 100%;
+        height: 20%;
+    }
+
+    .dorm_shortcuts li {
+        font-size: 24px;
+    }
+
+    .dorm_shortcuts i {
+        font-size: 40px;
+    }
+
+}
