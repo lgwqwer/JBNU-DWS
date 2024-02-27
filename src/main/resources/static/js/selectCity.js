@@ -17,6 +17,7 @@ import {Chungcheongnamdo} from './Data.js'
 import {Chungcheongbukdo} from './Data.js'
 
 function convertor(prov) {
+    let def = [];
     switch (prov) {
         case "Gangwon-do":
             return Gangwondo;
@@ -51,12 +52,16 @@ function convertor(prov) {
         case "Chungcheongbuk-do":
             return Chungcheongbukdo;
         default:
-            return " ";
+            return def;
     }
 }
 
 export function selectCity() {
     let selectCity = document.getElementById("cities");
+
+    while(selectCity.hasChildNodes()) {
+        selectCity.removeChild(selectCity.firstChild);
+    }
 
     let provinceName = document.getElementById("provinces").value;
 
@@ -72,3 +77,5 @@ export function selectCity() {
 }
 
 document.getElementById("provinces").addEventListener('change', selectCity);
+
+
