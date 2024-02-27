@@ -1,5 +1,5 @@
 import {provinces} from "./Data.js"
-// import {selectCity} from './Data.js' // 이거 import하면 시/도 출력 안됨
+import {selectCity} from './selectCity.js' // 이거 import하면 시/도 출력 안됨
 
 // 도시 입력 셀렉트 박스 생성
 function selectProvince() {
@@ -12,7 +12,6 @@ function selectProvince() {
         selectBoxProvinces.add(option);
     }
 }
-
 selectProvince();
 
 

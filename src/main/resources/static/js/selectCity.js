@@ -13,34 +13,62 @@ import {Incheon} from './Data.js'
 import {Jeonnam} from './Data.js'
 import {Jeonbuk} from './Data.js'
 import {Jeju} from './Data.js'
+import {Chungcheongnamdo} from './Data.js'
+import {Chungcheongbukdo} from './Data.js'
 
+function convertor(prov) {
+    switch (prov) {
+        case "Gangwon-do":
+            return Gangwondo;
+        case "Gyeonggi-do":
+            return Gyeonggido;
+        case "Gyeongnam":
+            return Gyeongnam;
+        case "Gyeongbuk":
+            return Gyeongbuk;
+        case "Gwangju":
+            return Gwangju;
+        case "Daegu":
+            return Daegu;
+        case "Daejeon":
+            return Daejeon;
+        case "Busan":
+            return Busan;
+        case "Seoul":
+            return Seoul;
+        case "Ulsan":
+            return Ulsan;
+        case "Incheon":
+            return Incheon;
+        case "Jeonnam":
+            return Jeonnam;
+        case "Jeonbuk":
+            return Jeonbuk;
+        case "Jeju":
+            return Jeju;
+        case "Chungcheongnam-do":
+            return Chungcheongnamdo;
+        case "Chungcheongbuk-do":
+            return Chungcheongbukdo;
+        default:
+            return " ";
+    }
+}
 
-export function selectGangwondo() {
+export function selectCity() {
     let selectCity = document.getElementById("cities");
 
-    for(let i = 0; i < Gangwondo.length; i++) {
+    let provinceName = document.getElementById("provinces").value;
+
+    let citiesArr = convertor(provinceName);
+    console.log(citiesArr);
+
+    for(let i = 0; i < citiesArr.length; i++) {
         let option = document.createElement("option");
-        option.text = Gangwondo[i].t;
-        option.value = Gangwondo[i].v;
+        option.text = citiesArr[i].t;
+        option.value = citiesArr[i].v;
         selectCity.add(option);
     }
 }
 
-function selectCity() {
-    let parentProvince = document.getElementById("provinces").value;
-
-    if(parentProvince == " ") {
-
-    } else {
-
-        switch (parentProvince) {
-            case "Gangwon-do":
-                selectGangwondo();
-                break;
-
-            default:
-
-                break;
-        }
-    }
-}
+document.getElementById("provinces").addEventListener('change', selectCity);
