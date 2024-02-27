@@ -19,9 +19,6 @@
   <link th:href="@{/css/index.css}" rel="stylesheet">
   <link th:href="@{/css/header.css}" rel="stylesheet">
   <link th:href="@{/css/conversion-form.css}" rel="stylesheet">
-
-  <script th:src="@{/js/toggle.js}"></script>
-  <script th:src="@{/js/main.js}"></script>
 </head>
 
 <body>
@@ -93,15 +90,7 @@
               <th scope="row">
                 <select class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100" name="collage" id="collages"
                   aria-label="Default select example">
-                  <option selected>단과대학</option>
-                  <option value="engineering">공과대학</option>
-                  <option value="agriculture">농업생명대학</option>
-                  <option value="education">사범대학</option>
-                  <option value="commerce">상과대학</option>
-                  <option value="humanEcology">생활과학대학</option>
-                  <option value="arts">예술대학</option>
-                  <option value="humanities">인문대학</option>
-                  <option value="naturalSciences">자연과학대학</option>
+                  <script th:type="module" th:src="@{/js/selectCollage.js}"></script>
                 </select>
               </th>
               <td>
@@ -114,15 +103,12 @@
                 <input type="number" name="minusPoint" class="form-control" th:value="${minusPoint}" id="minusPointInput" step="1">
               </td>
               <td>
-                <select name="province" id="provinces" class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100"
-                  aria-label="Default select example">
+                <select class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100" name="province" id="provinces" aria-label="Default select example">
+                  <script th:type="module" th:src="@{/js/selectProvince.js}"></script>
                 </select>
               </td>
-              <td><select class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100" aria-label="Default select example">
-                  <option selected>시/군/구</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+              <td><select class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100" name="city" id="cities" aria-label="Default select example">
+                  <script th:type="module" th:src="@{/js/selectCity.js}"></script>
                 </select></td>
               <td>
                 <input class="form-control" type="number" name="distanceScore" th:value="${distanceScore}" step="0.01" id="distanceScore">
@@ -293,10 +279,6 @@
 
       </div>
     </div>
-
-
-
-
   </main>
 
 

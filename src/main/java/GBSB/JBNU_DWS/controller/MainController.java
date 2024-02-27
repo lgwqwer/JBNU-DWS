@@ -1,13 +1,10 @@
 package GBSB.JBNU_DWS.controller;
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
 @Controller
 public class MainController {
-
     @GetMapping("/home")
     public String home(Model model) {
         model.addAttribute("grade", "0");
@@ -17,6 +14,4 @@ public class MainController {
         model.addAttribute("conversionScore", "0");
         return "index";
     }
-
-
 }
