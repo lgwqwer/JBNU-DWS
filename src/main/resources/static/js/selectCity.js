@@ -4,7 +4,7 @@ import { Gangwondo, Gyeonggido, Gyeongnam, Gyeongbuk, Gwangju,
 
 
 // 시/도 선택 시 그에 맞는 배열 리턴하는 함수
-function getProvinceArr(prov) {
+function getCityArr(prov) {
     let def = [];
     switch (prov) {
         case "Gangwon-do":
@@ -53,7 +53,7 @@ export function selectCity() {
 
     let provinceName = document.getElementById("provinces").value; // 사용자가 선태한 시/도 데이터 받아오기
 
-    let citiesArr = getProvinceArr(provinceName);   // 선택한 시/도의 시/군/구 배열 가져오기
+    let citiesArr = getCityArr(provinceName);   // 선택한 시/도의 시/군/구 배열 가져오기
 
     for(let i = 0; i < citiesArr.length; i++) { // 시/군/구 배열의 size 만큼 루프 돌면서 옵션 추가
         let option = document.createElement("option");
