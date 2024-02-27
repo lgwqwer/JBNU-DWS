@@ -1,3 +1,7 @@
+
+
+// 지역 정보에 대한 데이터를 저장하는 모듈
+
 export let collages = [
     {t:"공과대학", v:"engineering"},
     {t:"농업생명대학", v:"agriculture"},
