@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="https://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -16,12 +16,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/4ec59cdc0a.js" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="./css/header.css">
-  <link rel="stylesheet" href="./css/index.css">
-
-  <ling src="./css/conversion-form.css"></ling>
-  <script src="./js/toggle.js"></script>
-  <script src="./js/main.js"></script>
+  <link th:href="@{/css/index.css}" rel="stylesheet">
+  <link th:href="@{/css/header.css}" rel="stylesheet">
+  <link th:href="@{/css/conversion-form.css}" rel="stylesheet">
 </head>
 
 <body>
@@ -62,7 +59,7 @@
 <main>
   <div class="container mb-5 px-4">
     <h1 class="mb-5">기숙사 환산점수 계산</h1>
-    <form action="/result" method="post" class="mb-5" th:object="${formData}">
+    <form action="/home" method="POST" class="mb-5">
 
       <table class="table table-hover table-bordered mb-5">
         <colgroup>
@@ -93,42 +90,31 @@
           <th scope="row">
             <select class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100" name="collage" id="collages"
                     aria-label="Default select example">
-              <option selected>단과대학</option>
-              <option value="engineering">공과대학</option>
-              <option value="agriculture">농업생명대학</option>
-              <option value="education">사범대학</option>
-              <option value="commerce">상과대학</option>
-              <option value="humanEcology">생활과학대학</option>
-              <option value="arts">예술대학</option>
-              <option value="humanities">인문대학</option>
-              <option value="naturalSciences">자연과학대학</option>
+              <script th:type="module" th:src="@{/js/selectCollage.js}"></script>
             </select>
           </th>
           <td>
-            <input type="number" name="grade" class="form-control" id="gradeInput" step="0.01" th:value="*{grade}">
+            <input type="number" name="grade" class="form-control" th:value="${grade}" id="gradeInput" step="0.01">
           </td>
           <td>
-            <input type="number" name="bonusPoint" class="form-control" id="bonusPointInput" step="1" th:value="*{bonusPoint}">
+            <input type="number" name="bonusPoint" class="form-control" th:value="${bonusPoint}" id="bonusPointInput" step="1">
           </td>
           <td>
-            <input type="number" name="minusPoint" class="form-control" id="minusPointInput" step="1" th:value="*{minusPoint}">
+            <input type="number" name="minusPoint" class="form-control" th:value="${minusPoint}" id="minusPointInput" step="1">
           </td>
           <td>
-            <select name="province" id="provinces" class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100"
-                    aria-label="Default select example">
+            <select class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100" name="province" id="provinces" aria-label="Default select example">
+              <script th:type="module" th:src="@{/js/selectProvince.js}"></script>
             </select>
           </td>
-          <td><select class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100" aria-label="Default select example">
-            <option selected>시/군/구</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <td><select class="form-select col-xxl-3 col-xl-4 col-lg-6 w-100" name="city" id="cities" aria-label="Default select example">
+            <script th:type="module" th:src="@{/js/selectCity.js}"></script>
           </select></td>
           <td>
-            <input class="form-control" type="number" id="distanceScore" th:value="*{distanceScore}" readonly>
+            <input class="form-control" type="number" name="distanceScore" th:value="${distanceScore}" step="0.01" id="distanceScore">
           </td>
           <td>
-            <input class="form-control" type="number" id="conversionScore" th:value="*{conversionScore}" readonly>
+            <input class="form-control" type="number" step="0.01" th:value="${conversionScore}" id="conversionScore" readonly>
           </td>
         </tr>
         </tbody>
@@ -136,14 +122,20 @@
 
       <div class="container row justify-content-between">
         <div class="form-check col-xxl-3 col-xl-4 col-lg-6">
-          <input class="form-check-input" type="radio" name="gender" value="m" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault">
+          <input class="form-check-input" type="radio" name="gender" value="noInput" id="noInput" checked="checked">
+          <label class="form-check-label" for="noInput">
+            입력 안함
+          </label>
+        </div>
+        <div class="form-check col-xxl-3 col-xl-4 col-lg-6">
+          <input class="form-check-input" type="radio" name="gender" value="m" id="man">
+          <label class="form-check-label" for="man">
             남성
           </label>
         </div>
         <div class="form-check col-xxl-3 col-xl-4 col-lg-6">
-          <input class="form-check-input" type="radio" name="gender" value="w" id="flexCheckChecked">
-          <label class="form-check-label" for="flexCheckChecked">
+          <input class="form-check-input" type="radio" name="gender" value="w" id="woman">
+          <label class="form-check-label" for="woman">
             여성
           </label>
         </div>
@@ -160,7 +152,7 @@
     <div class="row justify-content-center g-4 px-2 gap-4 mb-5 mt-2">
 
       <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
-        <img src="../images/참빛관.png" class="card-img-top" alt="참빛관 사진">
+        <img src="./images/참빛관.png" class="card-img-top" alt="참빛관 사진">
         <div class="card-body">
           <h5 class="card-title">참빛관</h5>
           <p class="card-text"></p>
@@ -171,7 +163,7 @@
       </div>
 
       <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
-        <img src="../images/대동관.png" class="card-img-top" alt="...">
+        <img src="./images/대동관.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">대동관</h5>
           <p class="card-text"></p>
@@ -182,7 +174,7 @@
       </div>
 
       <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
-        <img src="../images/평화관.png" class="card-img-top" alt="...">
+        <img src="./images/평화관.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">평화관</h5>
           <p class="card-text"></p>
@@ -193,7 +185,7 @@
       </div>
 
       <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
-        <img src="../images/새빛관.png" class="card-img-top" alt="...">
+        <img src="./images/새빛관.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">새빛관</h5>
           <p class="card-text"></p>
@@ -204,7 +196,7 @@
       </div>
 
       <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
-        <img src="../images/한빛관.png" class="card-img-top" alt="...">
+        <img src="./images/한빛관.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">한빛관</h5>
           <p class="card-text"></p>
@@ -215,7 +207,7 @@
       </div>
 
       <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
-        <img src="../images/창의관.png" class="card-img-top" alt="...">
+        <img src="./images/창의관.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">창의관</h5>
           <p class="card-text"></p>
@@ -226,7 +218,7 @@
       </div>
 
       <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
-        <img src="../images/혜민관.png" class="card-img-top" alt="...">
+        <img src="./images/혜민관.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">혜민관</h5>
           <p class="card-text"></p>
@@ -237,7 +229,7 @@
       </div>
 
       <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
-        <img src="../images/특성화캠퍼스.png" class="card-img-top" alt="...">
+        <img src="./images/특성화캠퍼스.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">웅비관</h5>
           <p class="card-text"></p>
@@ -248,7 +240,7 @@
       </div>
 
       <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
-        <img src="../images/특성화캠퍼스.png" class="card-img-top" alt="...">
+        <img src="./images/특성화캠퍼스.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">청운관</h5>
           <p class="card-text"></p>
@@ -258,39 +250,35 @@
         </div>
       </div>
 
-      <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
-        <img src="../images/미리보기.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">추가 예정</h5>
-          <p class="card-text"></p>
-          <button class="btn btn-dark rounded-pill px-3" type="button">추가 예정</button>
-        </div>
-      </div>
+      <!--        <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">-->
+      <!--          <img src="./images/미리보기.png" class="card-img-top" alt="...">-->
+      <!--          <div class="card-body">-->
+      <!--            <h5 class="card-title">추가 예정</h5>-->
+      <!--            <p class="card-text"></p>-->
+      <!--            <button class="btn btn-dark rounded-pill px-3" type="button">추가 예정</button>-->
+      <!--          </div>-->
+      <!--        </div>-->
 
-      <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
-        <img src="../images/미리보기.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">추가 예정</h5>
-          <p class="card-text"></p>
-          <button class="btn btn-dark rounded-pill px-3" type="button">추가 예정</button>
-        </div>
-      </div>
+      <!--        <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">-->
+      <!--          <img src="./images/미리보기.png" class="card-img-top" alt="...">-->
+      <!--          <div class="card-body">-->
+      <!--            <h5 class="card-title">추가 예정</h5>-->
+      <!--            <p class="card-text"></p>-->
+      <!--            <button class="btn btn-dark rounded-pill px-3" type="button">추가 예정</button>-->
+      <!--          </div>-->
+      <!--        </div>-->
 
-      <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">
-        <img src="../images/미리보기.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">추가 예정</h5>
-          <p class="card-text"></p>
-          <button class="btn btn-dark rounded-pill px-3" type="button">추가 예정</button>
-        </div>
-      </div>
+      <!--        <div class="card col-xxl-3 col-lg-4 col-md-6 col-sm-12 p-0" style="width: 18rem;">-->
+      <!--          <img src="./images/미리보기.png" class="card-img-top" alt="...">-->
+      <!--          <div class="card-body">-->
+      <!--            <h5 class="card-title">추가 예정</h5>-->
+      <!--            <p class="card-text"></p>-->
+      <!--            <button class="btn btn-dark rounded-pill px-3" type="button">추가 예정</button>-->
+      <!--          </div>-->
+      <!--        </div>-->
 
     </div>
   </div>
-
-
-
-
 </main>
 
 
@@ -315,7 +303,7 @@
     <li class="nav-item"><a href="#" class="nav-link px-2 text-secondary">FAQs</a></li>
     <li class="nav-item"><a href="#" class="nav-link px-2 text-secondary">About</a></li>
   </ul>
-  <p class="text-center text-secondary">© 2024 Company, Inc</p>
+  <p class="text-center text-secondary">© 2024. 개발새발 All right reserved.</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

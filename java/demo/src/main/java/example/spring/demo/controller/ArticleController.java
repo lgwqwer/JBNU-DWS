@@ -4,6 +4,7 @@ import example.spring.demo.dto.ArticleForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -16,24 +17,17 @@ public class ArticleController {
     }
 
 
-    @PostMapping("/result")
-    @ResponseBody
-    public String handleFormSubmission(ArticleForm form){
-        double grade = form.getGrade();
-        int bonusPoint = form.getBonusPoint();
-        int minusPoint = form.getMinusPoint();
-        double distanceScore = form.getDistScore();
+    @PostMapping("/home")
+    public String conversion(Model model, ArticleForm form) {
 
-        double conversionScore = ((grade + (bonusPoint * 0.009 - minusPoint * 0.009)) / 4.5) * 90 + distanceScore;
-
-
-        System.out.println("Received Grade: " + grade);
-        System.out.println("Received Bonus Point: " + bonusPoint);
-        System.out.println("Received Minus Point: "+ minusPoint);
-        System.out.println("Received Distance Score: " + distanceScore);
-
-        System.out.println("Result: " + conversionScore);
-        return "";
+        // DTO 객체의 속성 값을 받아와서 Model에 추가 -> View 조작 가능
+        model.addAttribute("grade", form.getGrade());
+        model.addAttribute("bonusPoint", form.getBonusPoint());
+        model.addAttribute("minusPoint", form.getMinusPoint());
+        model.addAttribute("distanceScore", form.getDistanceScore());
+        model.addAttribute("conversionScore", form.getConversionScore());
+        System.out.println(form.toString());
+        return "index";
     }
 
     //dto get

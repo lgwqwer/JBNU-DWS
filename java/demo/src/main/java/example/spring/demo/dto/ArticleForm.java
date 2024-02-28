@@ -6,36 +6,55 @@ public class ArticleForm {
     private double grade;
     private int bonusPoint;
     private int minusPoint;
+    private String province;
     private double distanceScore;
-    private String gender;
+    private String city;
     private double conversionScore;
 
-    static boolean isStringEmpty(String str) {return str == null || str.isEmpty();}
-
-    public ArticleForm(String collage, double grade, int bonusPoint, int minusPoint, double distanceScore, String gender) {
+    public ArticleForm(String collage, double grade, int bonusPoint, int minusPoint, String province, String city, double distanceScore) {
         this.collage = collage;
         this.grade = grade;
-        this.distanceScore = distanceScore;
         this.bonusPoint = bonusPoint;
         this.minusPoint = minusPoint;
-        this.gender = gender;
+        this.province = province;
+        this.city = city;
+        this.distanceScore = distanceScore;
     }
 
     public String getCollage() {return collage;}
     public double getGrade() {return grade;}
     public int getBonusPoint() {return bonusPoint;}
     public int getMinusPoint() {return minusPoint;}
-    public double getDistScore() {return distanceScore;}
-    public String getGender() { return gender;}
+    public String getProvince() {return province;}
+    public double getDistanceScore() {return distanceScore;}
+    public String getCity() { return city;}
 
+    public double getConversionScore() {
+        double result = ((grade + (bonusPoint * 0.009 - minusPoint * 0.009)) / 4.5) * 90 + distanceScore;
+        this.conversionScore = (double)Math.round(result * 100) / 100.0;
+        return conversionScore;
+    }
     public void setCollage(String collage) { this.collage = collage;}
     public void setGrade(double grade) { this.grade = grade;}
     public void setBonusPoint(int bonusPoint) {this.bonusPoint = bonusPoint;}
     public void setMinusPoint(int minusPoint){this.minusPoint = minusPoint;}
     public void setDistanceScore(double distanceScore){this.distanceScore = distanceScore;}
-    public void setGender(String gender) { this.gender = gender;}
+    public void setGender(String city) { this.city = city;}
     public void setConversionScore(double conversionScore){this.conversionScore = conversionScore;}
 
 
+    @Override
+    public String toString() {
+        return "ConversionForm{" +
+                "collage='" + collage + '\'' +
+                ", grade=" + grade +
+                ", bonusPoint=" + bonusPoint +
+                ", minusPoint=" + minusPoint +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", distanceScore=" + distanceScore +
+                ", conversionScore=" + conversionScore +
+                '}';
+    }
 
 }
