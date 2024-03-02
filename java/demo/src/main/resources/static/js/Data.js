@@ -221,7 +221,7 @@ export let Seoul = [
     {t:"용산구", v:"Yongsan-gu"},
     {t:"은평구", v:"Eunpyeong-gu"},
     {t:"중구(서울)", v:"Jung-gu"},
-    {t:"중랑구", v:"Jungnang-gu"}
+    {t:"중랑구", v:"Jungnang-gu"},
     {t:"종로구", v:"Jongno-gu"}
 ];
 export let Ulsan = [
