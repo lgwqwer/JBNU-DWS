@@ -1,22 +1,24 @@
-import { Gangwondo, Gyeonggido, Gyeongnam, Gyeongbuk, Gwangju,
+import { Gangwon, Gyeonggi, Gyeongnam, Gyeongbuk, Gwangju,
     Daegu, Daejeon, Busan, Seoul, Ulsan,
-    Incheon, Jeonnam, Jeonbuk, Jeju, Chungcheongnamdo, Chungcheongbukdo } from './Data.js';
+    Incheon, Jeonnam, Jeonbuk, Jeju, Chungnam, Chungbuk } from './Data.js';
 
 
 // 시/도 선택 시 그에 맞는 배열 리턴하는 함수
 function getCityArr(prov) {
     let def = [];
     switch (prov) {
-        case "Gangwon-do":
-            return Gangwondo;
-        case "Gyeonggi-do":
-            return Gyeonggido;
+        case "Gangwon":
+            return Gangwon;
+        case "Gyeonggi":
+            return Gyeonggi;
         case "Gyeongnam":
             return Gyeongnam;
         case "Gyeongbuk":
             return Gyeongbuk;
         case "Gwangju":
             return Gwangju;
+        case "Sejong":
+            return Sejong;
         case "Daegu":
             return Daegu;
         case "Daejeon":
@@ -35,10 +37,10 @@ function getCityArr(prov) {
             return Jeonbuk;
         case "Jeju":
             return Jeju;
-        case "Chungcheongnam-do":
-            return Chungcheongnamdo;
-        case "Chungcheongbuk-do":
-            return Chungcheongbukdo;
+        case "Chungnam":
+            return Chungnam;
+        case "Chungbuk":
+            return Chungbuk;
         default:
             return def;
     }

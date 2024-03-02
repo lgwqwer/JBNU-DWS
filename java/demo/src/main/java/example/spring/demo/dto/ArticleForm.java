@@ -39,7 +39,7 @@ public class ArticleForm {
     public void setBonusPoint(int bonusPoint) {this.bonusPoint = bonusPoint;}
     public void setMinusPoint(int minusPoint){this.minusPoint = minusPoint;}
     public void setDistanceScore(double distanceScore){this.distanceScore = distanceScore;}
-    public void setGender(String city) { this.city = city;}
+    public void setCity(String city) { this.city = city;}
     public void setConversionScore(double conversionScore){this.conversionScore = conversionScore;}
 
 

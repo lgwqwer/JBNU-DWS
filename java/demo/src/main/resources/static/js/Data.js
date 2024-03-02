@@ -15,8 +15,8 @@ export let collages = [
 
 export let provinces = [
     {t:"시/도", v:" "},
-    {t:"강원특별자치도", v:"Gangwon-do"},
-    {t:"경기도", v:"Gyeonggi-do"},
+    {t:"강원특별자치도", v:"Gangwon"},
+    {t:"경기도", v:"Gyeonggi"},
     {t:"경상남도", v:"Gyeongnam"},
     {t:"경상북도", v:"Gyeongbuk"},
     {t:"광주광역시", v:"Gwangju"},
@@ -30,11 +30,11 @@ export let provinces = [
     {t:"전라남도", v:"Jeonnam"},
     {t:"전북특별자치도", v:"Jeonbuk"},
     {t:"제주특별자치도", v:"Jeju"},
-    {t:"충청남도", v:"Chungcheongnam-do"},
-    {t:"충청북도", v:"Chungcheongbuk-do"}
+    {t:"충청남도", v:"Chungnam"},
+    {t:"충청북도", v:"Chungbuk"}
 ];
 
-export let Gangwondo = [
+export let Gangwon = [
     {t:"강릉시", v:"Gangneung-si"},
     {t:"동해시", v:"Donghae-si"},
     {t:"삼척시", v:"Samcheok-si"},
@@ -55,8 +55,10 @@ export let Gangwondo = [
     {t:"횡성군", v:"Hoengseong-gun"},
 ];
 
-export let Gyeonggido = [
-    {t:"고양시", v:"Goyang-si"},
+export let Gyeonggi = [
+    {t:"고양시 덕양구", v:"Goyang-si-Deogyang-gu"},
+    {t:"고양시 일산동구", v:"Goyang-si-Ilsandong-gu"},
+    {t:"고양시 일산서구", v:"Goyang-si-Ilsanseo-gu"},
     {t:"과천시", v:"Gwacheon-si"},
     {t:"광명시", v:"Gwangmyeong-si"},
     {t:"광주시", v:"Gwangju-si"},
@@ -66,16 +68,25 @@ export let Gyeonggido = [
     {t:"남양주시", v:"Namyangju-si"},
     {t:"동두천시", v:"Dongducheon-si"},
     {t:"부천시", v:"Bucheon-si"},
-    {t:"성남시", v:"Seongnam-si"},
-    {t:"수원시", v:"Suwon-si"},
+    {t:"성남시 분당구", v:"Seongnam-si-Bundang-gu"},
+    {t:"성남시 수정구", v:"Seongnam-si-Sujeong-gu"},
+    {t:"성남시 중원구", v:"Seongnam-si-Jungwon-gu"},
+    {t:"수원시 권선구", v:"Suwon-si-Gwonseon-gu"},
+    {t:"수원시 영통구", v:"Suwon-si-Yeongtong-gu"},
+    {t:"수원시 장안구", v:"Suwon-si-Jangan-gu"},
+    {t:"수원시 팔달구", v:"Suwon-si-Paldal-gu"},
     {t:"시흥시", v:"Siheung-si"},
-    {t:"안산시", v:"Ansan-si"},
+    {t:"안산시 단원구", v:"Ansan-si-Danwon-gu"},
+    {t:"안산시 상록구", v:"Ansan-si-Sangnok-gu"},
     {t:"안성시", v:"Anseong-si"},
-    {t:"안양시", v:"Anyang-si"},
+    {t:"안양시 동안구", v:"Anyang-si-Dongan-gu"},
+    {t:"안양시 만안구", v:"Anyang-si-Manan-gu"},
     {t:"양주시", v:"Yangju-si"},
     {t:"여주시", v:"Yeoju-si"},
     {t:"오산시", v:"Osan-si"},
-    {t:"용인시", v:"Yongin-si"},
+    {t:"용인시 기흥구", v:"Yongin-si-Giheung-gu"},
+    {t:"용인시 수지구", v:"Yongin-si-Suji-gu"},
+    {t:"용인시 처인구", v:"Yongin-si-Cheoin-gu"},
     {t:"의왕시", v:"Uiwang-si"},
     {t:"의정부시", v:"Uijeongbu-si"},
     {t:"이천시", v:"Icheon-si"},
@@ -96,8 +107,11 @@ export let Gyeongnam = [
     {t:"사천시", v:"Sacheon-si"},
     {t:"양산시", v:"Yangsan-si"},
     {t:"진주시", v:"Jinju-si"},
-    {t:"창원시", v:"Changwon-si"},
-    {t:"창원시(진해구)", v:"Changwon-si"},
+    {t:"창원시 마산합포구", v:"Changwon-si-Masanhappo-gu"},
+    {t:"창원시 마산회원구", v:"Changwon-si-Masanhoewon-gu"},
+    {t:"창원시 성산구", v:"Changwon-si-Seongsan-gu"},
+    {t:"창원시 의창구", v:"Changwon-si-Uichang-gu"},
+    {t:"창원시 진해구", v:"Changwon-si-Jinhae-gu"},
     {t:"통영시", v:"Tongyeong-si"},
     {t:"거창군", v:"Geochang-gun"},
     {t:"고성군", v:"Goseong-gun"},
@@ -120,9 +134,9 @@ export let Gyeongbuk = [
     {t:"안동시", v:"Andong-si"},
     {t:"영주시", v:"Yeongju-si"},
     {t:"영천시", v:"Yeongcheon-si"},
-    {t:"포항시", v:"Pohang-si"},
+    {t:"포항시 남구", v:"Pohang-si-Nam-gu"},
+    {t:"포항시 북구", v:"Pohang-si-Buk-gu"},
     {t:"고령군", v:"Goryeong-gun"},
-    {t:"군위군", v:"Gunwi-gun"},
     {t:"봉화군", v:"Bonghwa-gun"},
     {t:"성주군", v:"Seongju-gun"},
     {t:"영덕군", v:"Yeongdeok-gun"},
@@ -130,7 +144,7 @@ export let Gyeongbuk = [
     {t:"예천군", v:"Yecheon-gun"},
     {t:"울릉군", v:"Ulleung-gun"},
     {t:"울진군", v:"Uljin-gun"},
-    {t:"의성군", v:"Uiseong-   gun"},
+    {t:"의성군", v:"Uiseong-gun"},
     {t:"청도군", v:"Cheongdo-gun"},
     {t:"청송군", v:"Cheongsong-gun"},
     {t:"칠곡군", v:"Chilgok-gun"}
@@ -141,6 +155,9 @@ export let Gwangju = [
     {t:"동구(광주)", v:"Dong-gu"},
     {t:"북구(광주)", v:"Buk-gu"},
     {t:"서구(광주)", v:"Seo-gu"}
+];
+export let Sejong = [
+    {t:"-", v:"null"}
 ];
 export let Daegu = [
     {t:"군위군", v:"Gunwi-gun"},
@@ -205,6 +222,7 @@ export let Seoul = [
     {t:"은평구", v:"Eunpyeong-gu"},
     {t:"중구(서울)", v:"Jung-gu"},
     {t:"중랑구", v:"Jungnang-gu"}
+    {t:"종로구", v:"Jongno-gu"}
 ];
 export let Ulsan = [
     {t:"남구(울산)", v:"Nam-gu"},
@@ -255,7 +273,8 @@ export let Jeonbuk = [
     {t:"김제시", v:"Gimje-si"},
     {t:"남원시", v:"Namwon-si"},
     {t:"익산시", v:"Iksan-si"},
-    {t:"전주시", v:"Jeonju-si"},
+    {t:"전주시 덕진구", v:"Jeonju-si-Deokjin-gu"},
+    {t:"전주시 완산구", v:"Jeonju-si-Wansan-gu"},
     {t:"정읍시", v:"Jeongeup-si"},
     {t:"부안군", v:"Buan-gun"},
     {t:"순창군", v:"Sunchang-gun"},
@@ -270,7 +289,7 @@ export let Jeju = [
     {t:"서귀포시", v:"Seogwipo-si"},
     {t:"제주시", v:"Jeju-si"}
 ];
-export let Chungcheongnamdo = [
+export let Chungnam = [
     {t:"계룡시", v:"Gyeryong-si"},
     {t:"공주시", v:"Gongju-si"},
     {t:"논산시", v:"Nonsan-si"},
@@ -278,7 +297,8 @@ export let Chungcheongnamdo = [
     {t:"보령시", v:"Boryeong-si"},
     {t:"서산시", v:"Seosan-si"},
     {t:"아산시", v:"Asan-si"},
-    {t:"천안시", v:"Cheonan-si"},
+    {t:"천안시 동남구", v:"Cheonan-si-Dongnam-gu"},
+    {t:"천안시 서북구", v:"Cheonan-si-Seobuk-gu"},
     {t:"금산군", v:"Geumsan-gun"},
     {t:"부여군", v:"Buyeo-gun"},
     {t:"서천군", v:"Seocheon-gun"},
@@ -287,9 +307,12 @@ export let Chungcheongnamdo = [
     {t:"태안군", v:"Taean-gun"},
     {t:"홍성군", v:"Hongseong-gun"}
 ];
-export let Chungcheongbukdo = [
+export let Chungbuk = [
     {t:"제천시", v:"Jecheon-si"},
-    {t:"청주시", v:"Cheongju-si"},
+    {t:"청주시 상당구", v:"Cheongju-si-Sangdang-gu"},
+    {t:"청주시 서원구", v:"Cheongju-si-Seowon-gu"},
+    {t:"청주시 청원구", v:"Cheongju-si-Cheongwon-gu"},
+    {t:"청주시 흥덕구", v:"Cheongju-si-Heungdeok-gu"},
     {t:"충주시", v:"Chungju-si"},
     {t:"괴산군", v:"Goesan-gun"},
     {t:"단양군", v:"Danyang-gun"},
