@@ -111,7 +111,7 @@
             <script th:type="module" th:src="@{/js/selectCity.js}"></script>
           </select></td>
           <td>
-            <input class="form-control" type="number" name="distanceScore" th:value="${distanceScore}" step="0.01" id="distanceScore">
+            <input class="form-control" type="number" step="0.01" th:value="${distanceScore}" id="distanceScore" readonly>
           </td>
           <td>
             <input class="form-control" type="number" step="0.01" th:value="${conversionScore}" id="conversionScore" readonly>

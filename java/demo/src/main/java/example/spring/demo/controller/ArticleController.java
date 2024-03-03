@@ -30,21 +30,5 @@ public class ArticleController {
         return "index";
     }
 
-    //dto get
-    @RequestMapping(value = "/result", method = RequestMethod.GET)
-    public ModelAndView multiformPage(
-            @ModelAttribute("formData") ArticleForm formDto,
-            ModelAndView mav) {
-        mav.addObject("formData", formDto);
-        mav.setViewName("/result");
-        return mav;
-    }
-    @RequestMapping(value = "/result", method = RequestMethod.POST)
-    public ModelAndView FormDtoSent(
-            @ModelAttribute("formData") ArticleForm formDto,
-            ModelAndView mav){
-        mav.addObject("formData", formDto);
-        mav.setViewName("request");
-        return mav;
-    }
+
 }
